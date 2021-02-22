@@ -8,9 +8,9 @@
                 </mat-label>
                 <input matInput formControlName="username" required>
                 <mat-error *ngIf="user.controls.username.touched && user.controls.username.invalid">
-                  <span *ngIf="user.controls.username.errors.required">This field is mandatory.</span>
-                  <span *ngIf="user.controls.username.errors.pattern">This field is invalid.</span>
-                  <span *ngIf="user.controls.username.errors.minlength">Atleast 5 charactors required.</span>
+                  <span *ngIf="user.controls.username.errors?.required">This field is mandatory.</span>
+                  <span *ngIf="user.controls.username.errors?.pattern">This field is invalid.</span>
+                  <span *ngIf="user.controls.username.errors?.minlength">Atleast 5 charactors required.</span>
                 </mat-error>
               </mat-form-field>
 
@@ -21,8 +21,8 @@
             </mat-label>
             <input matInput formControlName="firstname" >
              <mat-error *ngIf="user.controls.firstname.touched && user.controls.firstname.invalid">
-              <span *ngIf="user.controls.firstname.errors.required">This field is mandatory.</span>
-              <span *ngIf="user.controls.firstname.errors.minlength">Atleast 3 charactors required.</span>
+              <span *ngIf="user.controls.firstname.errors?.required">This field is mandatory.</span>
+              <span *ngIf="user.controls.firstname.errors?.minlength">Atleast 3 charactors required.</span>
             </mat-error> 
           </mat-form-field>
       </div>
@@ -32,7 +32,7 @@
             </mat-label>
             <input matInput formControlName="lastname" >
              <mat-error *ngIf="user.controls.lastname.touched && user.controls.lastname.invalid">
-              <span *ngIf="user.controls.lastname.errors.required">This field is mandatory.</span>
+              <span *ngIf="user.controls.lastname.errors?.required">This field is mandatory.</span>
               <span *ngIf="user.controls.lastname.errors.minlength">Atleast 3 charactors required.</span>
             </mat-error> 
           </mat-form-field>
@@ -61,7 +61,7 @@
           </mat-form-field>
       </div>
        <div>
-        <button mat-raised-button style="background-color:blue;color:white" type="button" (click)="submit()" [disabled]="!user.valid">Log In</button>
+        <button mat-stroked-button  style="background-color:blue;color:white;align-items: center;" type="button" (click)="submit()" [disabled]="!user.valid">Log In</button>
 
       </div>
       </form>
