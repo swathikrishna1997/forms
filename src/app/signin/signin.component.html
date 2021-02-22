@@ -1,0 +1,13 @@
+<h2 class="data" >Form Data</h2>
+<table class="table" >
+    <tr class="table">
+        <th>Username</th>
+        <th>Name</th>
+        <th>Email</th>
+    </tr>
+    <tr class="datas" *ngFor="let i of tabledata">
+        <td>{{i.username}}</td>
+        <td>{{i.firstname}}&nbsp;{{i.lastname}}</td>
+        <td>{{i.email}}</td>
+    </tr>
+</table>

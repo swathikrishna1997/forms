@@ -1,0 +1,69 @@
+<div class="example-container" style="background-color:cornsilk;">
+    <div class="form-container">
+      <form   [formGroup]="user" >
+          <h1 style="background-color:blue; color:white;text-align: center;">LOGIN</h1>
+        <div>
+            <mat-form-field class="form-field" appearance="outline">
+                <mat-label> User Name
+                </mat-label>
+                <input matInput formControlName="username" required>
+                <mat-error *ngIf="user.controls.username.touched && user.controls.username.invalid">
+                  <span *ngIf="user.controls.username.errors.required">This field is mandatory.</span>
+                  <span *ngIf="user.controls.username.errors.pattern">This field is invalid.</span>
+                  <span *ngIf="user.controls.username.errors.minlength">Atleast 5 charactors required.</span>
+                </mat-error>
+              </mat-form-field>
+
+        </div>
+      <div>
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label> First Name
+            </mat-label>
+            <input matInput formControlName="firstname" >
+             <mat-error *ngIf="user.controls.firstname.touched && user.controls.firstname.invalid">
+              <span *ngIf="user.controls.firstname.errors.required">This field is mandatory.</span>
+              <span *ngIf="user.controls.firstname.errors.minlength">Atleast 3 charactors required.</span>
+            </mat-error> 
+          </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label> last Name
+            </mat-label>
+            <input matInput formControlName="lastname" >
+             <mat-error *ngIf="user.controls.lastname.touched && user.controls.lastname.invalid">
+              <span *ngIf="user.controls.lastname.errors.required">This field is mandatory.</span>
+              <span *ngIf="user.controls.lastname.errors.minlength">Atleast 3 charactors required.</span>
+            </mat-error> 
+          </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label> email
+            </mat-label>
+            <input matInput formControlName="email" >
+             <mat-error *ngIf="user.controls.email.touched && user.controls.email.invalid">
+              <span *ngIf="user.controls.email.errors.required">This field is mandatory.</span>
+              <span *ngIf="user.controls.email.errors.pattern">This field is invalid.</span>
+
+            </mat-error>
+          </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="form-field" appearance="outline">
+            <mat-label> Phone Number
+            </mat-label>
+            <input matInput formControlName="phone" >
+             <mat-error *ngIf="user.controls.phone.touched && user.controls.phone.invalid">
+              <span *ngIf="user.controls.phone.errors.required">This field is mandatory.</span>
+              <span *ngIf="user.controls.phone.errors.pattern">10 charactors required.</span>
+            </mat-error>
+          </mat-form-field>
+      </div>
+       <div>
+        <button mat-raised-button style="background-color:blue;color:white" type="button" (click)="submit()" [disabled]="!user.valid">Log In</button>
+
+      </div>
+      </form>
+    </div>
+  </div>
